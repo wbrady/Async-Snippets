@@ -1,23 +1,16 @@
 <snippet>
-	<content><![CDATA[
-async.forEach(
-  ${1:array}, 
-  function(item,callback){
-    ${2:callback();}
-  }, 
-  function(err){
-    // if any of the saves produced an error, err would equal that error
-    if(err){
-      ${3}
-    }else{
-      ${4}
-    }
-  }
-);
+  <content><![CDATA[
+async.forEach(${1:array}, function(${2:item}, callback) {
+  ${3:callback();}
+}, function(err) {
+  if (err) { ${4:return callback(err);} }
+
+  ${5:// else}
+});
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>async_foreach</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger 
-	<scope>source.html</scope>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>async_foreach</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger
+  <scope>source.html</scope>
     -->
 </snippet>
